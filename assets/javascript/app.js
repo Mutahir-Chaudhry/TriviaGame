@@ -56,3 +56,5 @@ var options = [
 //Created variables to hold the users score, number of right and wrong answers. Set to 0 to begin. 
 var rightAnswers = 0;
 var wrongAnswers = 0;
+//Also adding varaible to hold unanswered questions in the case the timer runs out. 
+var noAnswers = 0;
