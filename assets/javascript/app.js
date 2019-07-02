@@ -141,7 +141,22 @@ function nextQuestion(){
     var next = setTimeout(function(){
         $("#answerSpace").empty();
         timer = 20;
-        // If there are no questions, this function will display the overall score and provide option for resetting the game. 
-    })
+        // If there are no questions, this function will display the overall score and provide button for resetting the game. The quesiton space will populate a message letting player know game is over, and add the score to the answer space. We do this with an if else statement.
+        if ((wrongAnswers + rightAnswers + noAnswers) === questionsCount){
+            $("#questionSpace").empty();
+            $("#questionSpace").html("<h2>THAT'S IT FOLKS! GAME OVER! Your score: </h2>");
+            $("#answerSpace").append("<h3> Right: " + rightAnswers + "</h3>");
+            $("#answerSpace").append("<h3> Wrong: " + wrongAnswers + "</h3>");
+            $("#answerSpace").append("<h3> No Answer: " + noAnswers + "</h3>");
+            $("#reset").show();
+            rightAnswers = 0;
+            wrongAnswers = 0;
+            noAnswers = 0;
+        } else {
+            startTimer();
+            showQuestion();
+        }
+
+    }, 3000);
 }
 })
