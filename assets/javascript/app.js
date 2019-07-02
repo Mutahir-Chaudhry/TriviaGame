@@ -5,53 +5,53 @@ var options = [
     {
         question:"What color is the sky?",
         choices: ["Red", "White", "Blue", "Green"],
-        answer: 3,
+        answer: 2,
         
     },
     {
         question:"What country is Rawalpindi in?",
         choices: ["Afghanistan", "Pakistan", "India", "Kansas"],
-        answer: 2,
+        answer: 1,
     },
     {
         question:"What is the compatable round for a standard issue M4 for the U.S. Army",
         choices: [".308", "30-30", ".762", ".556"],
-        answer: 4,
+        answer: 3,
     },
     {
         question: "How many inches in 1 foot?",
         choices: ["12", "14", "36", "6"],
-        answer: 1,
+        answer: 0,
     },
     {
         question: "What is the capital of Wisconsin?",
         choices: ["Waukesha", "Milwaukee", "Madison", "Green Bay"],
-        answer: 3,
+        answer: 2,
     },
     {
         question: "How many players from each team start on the court for a basketball game?",
         choices: ["5", "12", "7", "10"],
-        answer: 1,
+        answer: 0,
     },
     {
         question: "Complete this phrase: Red, Green, _____",
         choices: ["Yellow", "Refactor", "White", "Recliner"],
-        answer: 2,
+        answer: 1,
     },
     {
         question: "Select what goes first from the choices below:",
         choices: ["Git Push", "Git Pull", "Git Status", "Git Commit"],
-        answer: 3,
+        answer: 2,
     },
     {
         question: "Who was the lead actor in American Gangster?",
         choices: ["Al Pacino", "Robert Downey Jr.", "Johnny Depp", "Denzel Washington"],
-        answer: 4,
+        answer: 3,
     },
     {
         question: "Who won the NBA finals this year?",
         choices: ["Cleveland", "Raptors", "Golden State", "Lakers"],
-        answer: 2,
+        answer: 1,
     }];
 //Created variables to hold the users score, number of right and wrong answers. Set to 0 to begin. 
 var rightAnswers = 0;
@@ -69,7 +69,6 @@ var playerGuess = "";
 //Thinking we're gonna create a random question generator, so we'll have to create create a varaible for the question chosen from the index variable created from the options array. 
 var questionChosen;
 var index;
-var newArrray = [];
 var holder = [];
 
 //Created jQuery ti hide reset button until game needs to be reset.
@@ -77,7 +76,14 @@ $("#reset").hide();
 //Console log to check options array is populating.
 //console.log(options)
 //Created function to start with by displaying the question and start the timer as soon as the html loads. 
-
+$("#start").on("click", function() {
+    $("#start").hide();
+    showQuestion();
+    startTimer();
+    for (var i = 0; i < options.length; i++){
+        holder.push(options[i]);
+    }
+})
 //Created function to start the timer
 function startTimer() {
     if (!running) {
@@ -126,15 +132,16 @@ $(".possibleanswers").on("click", function() {
     if (playerGuess === questionChosen.answer){
         stopTimer();
         rightAnswers++;
-        playerGuess = "";
-        $("answerSpace").html("<h3>YOU ARE CORRECT!</h3>");
+        playerGuess= "";
+        $("#answerSpace").html("<h3>YOU ARE CORRECT!</h3>");
         nextQuestion();
     } 
     //Created else statement in the answer chosen by the player is not correct.
     else {
         stopTimer();
         wrongAnswers++;
-        $("answerSpace").html("<3>YOU ARE WRONG! The correct answer is: " + questionChosen.choice[questionChosen.answer] + "<h3>");
+        playerGuess="";
+        $("#answerSpace").html("<h3>YOU ARE WRONG! The correct answer is: " + questionChosen.choices[questionChosen.answer] + "</h3>");
         nextQuestion();
     }
 })
@@ -143,7 +150,7 @@ $(".possibleanswers").on("click", function() {
 function nextQuestion(){
     var next = setTimeout(function(){
         $("#answerSpace").empty();
-        timer = 20;
+        timer = 10;
         // If there are no questions, this function will display the overall score and provide button for resetting the game. The quesiton space will populate a message letting player know game is over, and add the score to the answer space. We do this with an if else statement.
         if ((wrongAnswers + rightAnswers + noAnswers) === questionsCount){
             $("#questionSpace").empty();
