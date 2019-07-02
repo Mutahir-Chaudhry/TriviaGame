@@ -94,6 +94,7 @@ function countdown() {
         noAnswers++;
         stopTimer();
         $("#answerSpace").html("<h3> YOU ARE OUT OF TIME! The right answer is: " + questionChosen.choices[questionChosen.answer] + "<h3>");
+        nextQuestion();
     }
 
 }
@@ -127,12 +128,14 @@ $(".possibleanswers").on("click", function() {
         rightAnswers++;
         playerGuess = "";
         $("answerSpace").html("<h3>YOU ARE CORRECT!</h3>");
+        nextQuestion();
     } 
     //Created else statement in the answer chosen by the player is not correct.
     else {
         stopTimer();
         wrongAnswers++;
         $("answerSpace").html("<3>YOU ARE WRONG! The correct answer is: " + questionChosen.choice[questionChosen.answer] + "<h3>");
+        nextQuestion();
     }
 })
 }
