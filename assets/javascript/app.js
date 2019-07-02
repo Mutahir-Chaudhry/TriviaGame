@@ -83,5 +83,9 @@ function startTimer(){
         running = true;
     }
 }
+//Created function for the actual countdown of the timer. It will be assigned to the id timerSpace in the html
+function countdown(){
+    $("#timerSpace").html("<h2>How much time you have left: " + timer + "<h3>");
 
+}
 })
