@@ -115,6 +115,7 @@ function showQuestion() {
     questionChosen = options[index];
     //Part of the showQuestion function will have to iterate though the answers part of the question chosen. We use a for loop to do this, which is done after we display the questionChosen in our questionSpace within the html
     $("#questionSpace").html("<h2>" + questionChosen.question + "<h2>");
+
     for (var i = 0; i < questionChosen.choices.length; i++) {
         //Created a new variable to hold possible choices. As long as there are choices, we will create another varaible iwth another div and popuate each one with its respective index within the iteration.
         var playerChoices = $("<div>")

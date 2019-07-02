@@ -4,20 +4,27 @@ h1{
     color: white;
 }
 #timerSpace{
+    text-align: center;
 
 }
 #questionSpace{
+    text-align: center;
 
 }
 #answerSpace{
+    text-align: center;
 
 }
 #reset{
     background-color: red;
-    float: right;
 }
 #start{
     background-color: green;
-    float: left;
 
+}
+.btn btn-primary btn-lg{
+    text-align: center;
+}
+.card{
+    background-color: white;
 }
