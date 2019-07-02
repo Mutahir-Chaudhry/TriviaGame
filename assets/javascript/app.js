@@ -62,3 +62,5 @@ var noAnswers = 0;
 var timer = 10;
 var intervalId;
 var running = false;
+//Created variable to hold the number of total questions which is equal to the total length of the options array
+var questionsCount = options.length
