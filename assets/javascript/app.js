@@ -73,7 +73,7 @@ var index;
 var newArrray = [];
 var holder = [];
 
-//Created reset function with the jQuery hide(); to make sure it resets everything when game reset
+//Created jQuery ti hide reset button until game needs to be reset.
 
 $("#reset").hide();
 
