@@ -95,4 +95,10 @@ function countdown(){
     }
 
 }
+
+//Created funciton to stop the timer, used if answer is chosen, user runs out of time, or if the game is complete. 
+function stopTimer();{
+    running = false;
+    clearInterval(intervalId);
+}
 })
