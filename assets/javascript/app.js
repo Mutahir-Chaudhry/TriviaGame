@@ -1,5 +1,6 @@
 //TRIVIA GAME
 //Variable to hold all possible questions and their respective answers.
+$(document).ready(function() {
 var options = [
     {
         question:"What color is the sky?",
@@ -69,4 +70,13 @@ var userGuess = "";
 //Thinking we're gonna create a random question generator, so we'll have to create create a varaible for the question chosen from the index variable created from the options array. 
 var pick;
 var index;
+var newArrray = [];
+var holder = [];
 
+//Created reset function with the jQuery hide(); to make sure it resets everything when game reset
+
+$("#reset").hide();
+
+
+
+})
