@@ -113,7 +113,9 @@ function showQuestion() {
         var playerChoices = $("<div>")
         playerChoices.addClass("possibleanswers");
         playerChoices.html(questionChosen.choices[i]);
-        
+        //Assigned a position to the player choices within the array of choices so we can compare it the index of the answer within the array.
+        playerChoices.attr("data-playerguess", i);
+        $("#answerSpace").append(playerChoices);
     }
     
 }
