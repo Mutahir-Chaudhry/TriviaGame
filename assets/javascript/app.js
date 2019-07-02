@@ -117,7 +117,11 @@ function showQuestion() {
         playerChoices.attr("data-playerguess", i);
         $("#answerSpace").append(playerChoices);
     }
+//Within the showQuestion function still, now have to create function to capture user selected answer and generate the different outcomes based on right or wrong answer. This will be an on click function since the function will be called only once an answer has been chosen. 
+$(".possibleanswers").on("click", function() {
+    //
     
+})
 }
 
 })
