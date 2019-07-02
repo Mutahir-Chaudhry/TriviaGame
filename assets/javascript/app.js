@@ -53,3 +53,6 @@ var options = [
         answer: 2,
     }
 ];
+//Created variables to hold the users score, number of right and wrong answers. Set to 0 to begin. 
+var rightAnswers = 0;
+var wrongAnswers = 0;
