@@ -67,7 +67,7 @@ var questionsCount = options.length
 //Created variable to hold the user's selected answer
 var userGuess = "";
 //Thinking we're gonna create a random question generator, so we'll have to create create a varaible for the question chosen from the index variable created from the options array. 
-var pick;
+var questionChosen;
 var index;
 var newArrray = [];
 var holder = [];
@@ -76,29 +76,38 @@ var holder = [];
 $("#reset").hide();
 //Console log to check options array is populating.
 //console.log(options)
+//Created function to start with by displaying the question and start the timer as soon as the html loads. 
+
 //Created function to start the timer
-function startTimer(){
+function startTimer() {
     if (!running) {
         intervalId = setInterval(countdown, 1000);
         running = true;
     }
 }
 //Created function for the actual countdown of the timer. It will be assigned to the id timerSpace in the html
-function countdown(){
+function countdown() {
     $("#timerSpace").html("<h2>How much time you have left: " + timer + "<h2>");
     timer --;
 //Created if statement to stop the timer if it reaches 0 ad there is no answer. We will add 1 to the number of noAnswers, run the stopTimer function, and show them a message saying the time is up and show them the right answer. 
     if (timer === 0) {
         noAnswers++;
         stopTimer();
-        $("#answerSpace").html("<h3> YOU ARE OUT OF TIME! The right answer is: " + pick.choice[pick.answer] + "<h3>");
+        $("#answerSpace").html("<h3> YOU ARE OUT OF TIME! The right answer is: " + questionChosen.choices[questionChosen.answer] + "<h3>");
     }
 
 }
-
 //Created funciton to stop the timer, used if answer is chosen, user runs out of time, or if the game is complete. 
-function stopTimer();{
+function stopTimer() {
     running = false;
     clearInterval(intervalId);
 }
+//Created function to generate random question. Start by defining the index variable previously created as a random generated number that will be referenced by option to assign a specific question from the array of option to the questionChosen varaible previously created. 
+function showQuestion() {
+    index = Math.floor(Math.random()*options.length);
+    questionChosen = options[index];
+    
+    //
+}
+
 })
