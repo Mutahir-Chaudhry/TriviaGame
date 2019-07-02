@@ -52,8 +52,7 @@ var options = [
         question: "Who won the NBA finals this year?",
         choices: ["Cleveland", "Raptors", "Golden State", "Lakers"],
         answer: 2,
-    }
-];
+    }];
 //Created variables to hold the users score, number of right and wrong answers. Set to 0 to begin. 
 var rightAnswers = 0;
 var wrongAnswers = 0;
@@ -74,10 +73,15 @@ var newArrray = [];
 var holder = [];
 
 //Created jQuery ti hide reset button until game needs to be reset.
-
 $("#reset").hide();
-
-console.log(options)
-
+//Console log to check options array is populating.
+//console.log(options)
+//Created function to start the timer
+function startTimer(){
+    if (!running) {
+        intervalId = setInterval(countdown, 1000);
+        running = true;
+    }
+}
 
 })
