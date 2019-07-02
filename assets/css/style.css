@@ -10,5 +10,13 @@ h1{
 
 }
 #answerSpace{
-    
+
+}
+#reset{
+    background-color: red;
+    float: right;
+}
+#start{
+    background-color: green;
+    float: left;
 }
