@@ -124,10 +124,16 @@ $(".possibleanswers").on("click", function() {
     //Created if statement to hold the outcome for the correct answer chosen within the possible answers on click function. 
     if (playerGuess === questionChosen.answer){
         stopTimer();
-        rightAnswers ++;
+        rightAnswers++;
         playerGuess = "";
         $("answerSpace").html("<h3>YOU ARE CORRECT!</h3>");
     } 
+    //Created else statement in the answer chosen by the player is not correct.
+    else {
+        stopTimer();
+        wrongAnswers++;
+        $("answerSpace").html("<3>YOU ARE WRONG! The correct answer is: " + questionChosen.choice[questionChosen.answer] + "<h3>");
+    }
 })
 }
 
