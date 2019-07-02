@@ -106,8 +106,12 @@ function stopTimer() {
 function showQuestion() {
     index = Math.floor(Math.random()*options.length);
     questionChosen = options[index];
+    //Part of the showQuestion function will have to iterate though the answers part of the question chosen. We use a for loop to do this, which is done after we display the questionChosen in our questionSpace within the html
+    $("#questionSpace").html("<h2>" + questionChosen.question + "<h2>");
+    for (var i = 0; i < questionChosen.choices.length; i++) {
+        //
+    }
     
-    //
 }
 
 })
