@@ -159,4 +159,16 @@ function nextQuestion(){
 
     }, 3000);
 }
+//Created function to be performed when the reset button is clicked. It will empty the answer and question space, hide the reset button, and reset the timer and show a new quesiton.
+$("#reset").on("click", function(){
+    $("#reset").hide();
+    $("#answerSpace").empty();
+    $("#questionSpace").empty();
+    for (var i = 0; i < holder.length; i++){
+        options.push(holder[i]);
+    }
+    startTimer();
+    showQuestion();
+
+})
 })
