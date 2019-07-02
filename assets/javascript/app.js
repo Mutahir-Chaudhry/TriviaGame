@@ -64,3 +64,6 @@ var intervalId;
 var running = false;
 //Created variable to hold the number of total questions which is equal to the total length of the options array
 var questionsCount = options.length
+//Created variable to hold the user's selected answer
+var userGuess = "";
+//Thinking we're gonna create a random question generator, so we'll have to create create a varaible for the question chosen from the index created from the options array. 
