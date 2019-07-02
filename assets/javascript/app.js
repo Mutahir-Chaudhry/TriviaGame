@@ -85,7 +85,14 @@ function startTimer(){
 }
 //Created function for the actual countdown of the timer. It will be assigned to the id timerSpace in the html
 function countdown(){
-    $("#timerSpace").html("<h2>How much time you have left: " + timer + "<h3>");
+    $("#timerSpace").html("<h2>How much time you have left: " + timer + "<h2>");
+    timer --;
+//Created if statement to stop the timer if it reaches 0 ad there is no answer. We will add 1 to the number of noAnswers, run the stopTimer function, and show them a message saying the time is up and show them the right answer. 
+    if (timer === 0) {
+        noAnswers++;
+        stopTimer();
+        $("#answerSpace").html("<h3> YOU ARE OUT OF TIME! The right answer is: " + pick.choice[pick.answer] + "<h3>");
+    }
 
 }
 })
