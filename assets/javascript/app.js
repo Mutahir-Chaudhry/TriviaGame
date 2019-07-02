@@ -77,6 +77,7 @@ var holder = [];
 
 $("#reset").hide();
 
+console.log(options)
 
 
 })
