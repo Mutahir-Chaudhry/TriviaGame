@@ -136,5 +136,12 @@ $(".possibleanswers").on("click", function() {
     }
 })
 }
-
+//Created function to display next question, and clear the answer space.
+function nextQuestion(){
+    var next = setTimeout(function(){
+        $("#answerSpace").empty();
+        timer = 20;
+        // If there are no questions, this function will display the overall score and provide option for resetting the game. 
+    })
+}
 })
