@@ -121,7 +121,13 @@ function showQuestion() {
 $(".possibleanswers").on("click", function() {
     //Began on click function by assigning an array position to the playerGuess varaible previously created, from the data value playerguess assigned to the player choices variable in this same showQuestion function.
     playerGuess = parseInt($(this).attr("data-playerguess"));
-
+    //Created if statement to hold the outcome for the correct answer chosen within the possible answers on click function. 
+    if (playerGuess === questionChosen.answer){
+        stopTimer();
+        rightAnswers ++;
+        playerGuess = "";
+        $("answerSpace").html("<h3>YOU ARE CORRECT!</h3>");
+    } 
 })
 }
 
