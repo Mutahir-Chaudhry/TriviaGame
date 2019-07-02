@@ -58,3 +58,7 @@ var rightAnswers = 0;
 var wrongAnswers = 0;
 //Also adding varaible to hold unanswered questions in the case the timer runs out. 
 var noAnswers = 0;
+//Created varaibles required to run timer. Initial time set to 10 (for the time being)
+var timer = 10;
+var intervalId;
+var running = false;
