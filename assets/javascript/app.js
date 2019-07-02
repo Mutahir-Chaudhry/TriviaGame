@@ -65,7 +65,7 @@ var running = false;
 //Created variable to hold the number of total questions which is equal to the total length of the options array
 var questionsCount = options.length
 //Created variable to hold the user's selected answer
-var userGuess = "";
+var playerGuess = "";
 //Thinking we're gonna create a random question generator, so we'll have to create create a varaible for the question chosen from the index variable created from the options array. 
 var questionChosen;
 var index;
@@ -119,8 +119,9 @@ function showQuestion() {
     }
 //Within the showQuestion function still, now have to create function to capture user selected answer and generate the different outcomes based on right or wrong answer. This will be an on click function since the function will be called only once an answer has been chosen. 
 $(".possibleanswers").on("click", function() {
-    //
-    
+    //Began on click function by assigning an array position to the playerGuess varaible previously created, from the data value playerguess assigned to the player choices variable in this same showQuestion function.
+    playerGuess = parseInt($(this).attr("data-playerguess"));
+
 })
 }
 
