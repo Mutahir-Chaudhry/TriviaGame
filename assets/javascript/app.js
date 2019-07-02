@@ -66,4 +66,7 @@ var running = false;
 var questionsCount = options.length
 //Created variable to hold the user's selected answer
 var userGuess = "";
-//Thinking we're gonna create a random question generator, so we'll have to create create a varaible for the question chosen from the index created from the options array. 
+//Thinking we're gonna create a random question generator, so we'll have to create create a varaible for the question chosen from the index variable created from the options array. 
+var pick;
+var index;
+
